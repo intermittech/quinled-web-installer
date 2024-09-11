@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<meta content='width=device-width' name='viewport'>
+  <meta name="theme-color" content="#222222">
+  <link rel="shortcut icon" href="images/favicon.png"> 
+	<title>Web-Installer for WLED on QuinLED boards</title>
+  <script
+  type="module"
+  src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"
+></script>
+	<link rel="stylesheet" href="dig-uno.css">
+</head>
+<body onload="checkSupported()">
+<img class="logo" alt="" src="../images/logo-QuinLED1.png">
+<div class="main">
+<h2>Welcome to the Web-Installer for WLED on QuinLED boards!</h2>
+<h2>QuinLED-Dig-Uno Section</h2>
+<img alt="" src="../images/quinled-dig-uno.png">
+
+<h3>To prepare, please remove power and then unplug the QuinLED-ESP32 board from your Dig board</h3>
+
+<div id="flasher">
+
+<ol>
+  <li>Plug in your QuinLED-ESP32 using a USB-C cable to a USB port on your computer</li>
+  <li>Select board version you want to flash from pull-down menu</li>
+  <li id="coms"> Hit "Install" and select the "USB Serial (COMx)". <a onclick="showSerialHelp()">No device found?</a></li>
+  <li>Custom QuinLED pre-configured WLED is installed within 3 minutes!</li>
+</ol><br>
+<h4>All versions below have the SoundReactive usermod installed.</h4>
+<br>
+<h4>Because of GPIO pins used WiFi configuration needs to be done using WLED-AP (password: wled1234)</h4>
+<h4>If you wish to download a custom .bin file for OTA flash, <a href="https://github.com/filipvdb/QuinLED-Firmware/releases" target="_blank">you can find them here</a></h4>
+<br>
+
+<div class="container inst-button">
+  <esp-web-install-button
+    id="inst"
+    manifest="json/QuinLED-Dig-Uno_v3-notemp.json"
+  >
+    <button class="btn" slot="activate">Install</button>
+  </esp-web-install-button><br>
+
+    <!-- add new builds here -->
+    <select id="ver" class="btn" onchange="setManifest()">
+      <optgroup label="WLED 0.14.2">
+        <option data-manifest="json/QuinLED-Dig-Uno_v3-notemp.json"
+          data-temperature="json/QuinLED-Dig-Uno_v3-yestemp.json"
+          >Antenna Board</option> 
+        <option data-manifest="json/QuinLED-Dig-Uno_v3-notemp.json"
+          data-temperature="json/QuinLED-Dig-Uno_v3-yestemp.json"
+          >Antenna External</option> 
+        <option data-manifest="json/QuinLED-Dig-Uno_v3-AEplus-notemp.json"
+          data-temperature="json/QuinLED-Dig-Uno_v3-AEplus-yestemp.json"
+          >AEplus</option> 
+        <option data-manifest="json/QuinLED-Dig-Uno_v3-Eth-notemp.json"
+          data-temperature="json/QuinLED-Dig-Uno_v3-Eth-yestemp.json"
+          >Ethernet</option> 
+      </optgroup>
+    </select><br><br>
+    
+    <div id="temper">
+      <input type="checkbox" id="temperature" name="temperature" onchange="setManifest()">
+      <label for="temperature"> My board has a Temperature Sensor</label><br>
+    </div>
+  </div>
+  
+  </div>
+
+<br>Powered by <a href="https://esphome.github.io/esp-web-tools/" target="_blank">ESP Web Tools</a><br>And a huge thank you to <a href="https://kno.wled.ge" target="_blank">WLED</a>
+
+<script>  
+  function setManifest() {
+    var sel = document.getElementById('ver');
+    var opt = sel.options[sel.selectedIndex];
+    var m = opt.dataset.manifest;
+    var me = opt.dataset.temperature;
+    document.getElementById('temper').style.display = me ? "block":"none";
+    if (me && document.getElementById('temperature').checked) {
+      m = me;
+    }
+    document.getElementById('inst').setAttribute('manifest',m);
+    document.getElementById('verstr').textContent = opt.text;
+  }
+  
+  function checkSupported() {
+    if (document.getElementById('inst').hasAttribute('install-unsupported')) unsupported();
+    else setManifest();
+  }
+  
+  function unsupported() {
+    document.getElementById('flasher').innerHTML = "Sorry, your browser is not yet supported!<br>Please try on Desktop Chrome or Edge.<br>If you wish to download a custom .bin file for OTA flash, <a href='https://github.com/filipvdb/QuinLED-Firmware/releases' target='_blank'>you can find them here</a><br>"
+  }
+  
+  function showSerialHelp() {
+    document.getElementById('coms').innerHTML = `Hit "Install" and select the correct COM port.<br><br>
+    You might be missing the drivers for your board.<br>
+    The QuinLED-ESP32 boards use the CH340 serial-to-USB chip<br>
+    For drivers, please visit here: <a href="https://quinled.info/quinled-esp32-drivers/" target="_blank"> Updated CH340 driver downloads</a><br>
+    <br>
+    Make sure your USB cable supports data transfers.<br><br>
+    `;
+  }
+</script>
+</body>
+</html>

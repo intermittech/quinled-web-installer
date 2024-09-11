@@ -1,0 +1,15 @@
+{
+  "name": "WLED",
+  "version": "0.14.2",
+  "new_install_improv_wait_time": 0,
+  "funding_url": "https://kno.wled.ge",
+    "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "../binaries/esp32_bootloader_v4.bin", "offset": 0 },
+        { "path": "../binaries/WLED_0.14.2_Dig-Uno-V3-AEplus-temperature.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}
