@@ -129,6 +129,12 @@ button::before {
     background-color: #FF6500;
 }
 
+.box-5:hover:hover button::before {
+    width: 120%;
+    opacity: .8;
+    background-color: #ff0077;
+}
+
 .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -230,6 +236,23 @@ button::before {
     top: -85px
 }
 
+
+.box-5 button {
+    border: 1px solid #ff0077;
+    color: #fff;
+    width: 320px;
+    font-size: 22px;
+    text-align: right;
+    padding-right: 20px;
+    line-height: 40px;
+}
+
+.box-5 button::after {
+    content: "";
+    background-color: #ff0077;
+    top: -85px
+}
+
 .cover {
     -webkit-transition: all 400ms ease-in-out;
     transition: all 400ms ease-in-out;
@@ -282,6 +305,10 @@ button::before {
 }
 
 .box-4 .cover::after {
+    background-image: url('/images/dig2go_pure.png');
+}
+
+.box-5 .cover::after {
     background-image: url('/images/dig2go_pure.png');
 }
 
@@ -341,6 +368,20 @@ button::before {
     color: #fff;
 }
 
+.box-5 button div::before {
+    content: 'QuinLED-An-Penta-Mini';
+    position: relative;
+    top: -44px;
+    left: -9px;
+    color: #ff0077;
+    font-size: 21px;
+    font-weight: 300;
+}
+
+.box-5:hover button div::before {
+    color: #fff;
+}
+
 .dr {
 position: absolute;
   bottom: 16px; 
@@ -361,22 +402,32 @@ position: absolute;
 			<h4>Note that currently WebSerial tools are only supported via HTTPS on Chrome and Edge browsers.</h4>
 			<br />
 		</div>
-		<div class="box box-1" onclick="window.location.href='/dig-uno'">
+		<div class="box box-1" onclick="navigateTo('/dig-uno/index.html')">
 			<div class="cover"><img src="/images/quinled-dig-uno.png" alt=""></div>
 			<button><div></div></button>
 		</div>
-		<div class="box box-2"  onclick="window.location.href='/dig-quad'">
+		<div class="box box-2"  onclick="navigateTo('/dig-quad/index.html')">
 			<div class="cover"><img src="/images/quinled-dig-quad.png" alt=""></div>
 			<button><div></div></button>
 		</div>
-		<div class="box box-3"  onclick="window.location.href='/dig-octa'">
+		<div class="box box-3"  onclick="navigateTo('/dig-octa/index.html')">
 			<div class="cover"><img src="/images/brainboard-32-8L.png" alt=""></div>
 			<button><div></div></button>
 		</div>
-		<div class="box box-4" onclick="window.location.href='/dig2go'">
+		<div class="box box-4" onclick="navigateTo('/dig2go/index.html')">
 			<div class="cover"><img src="/images/dig2go_pure.png" alt=""></div>
 			<button><div></div></button>
 		</div>
-
+		<div class="box box-5" onclick="navigateTo('/an-penta-mini/index.html')">
+			<div class="cover"><img src="/images/an-penta-mini.jpg" alt=""></div>
+			<button><div></div></button>
+		</div>
 	</div>
+
+    <script>
+        function navigateTo(path) {
+            const newUrl = new URL(path, window.location.href);
+            window.location.href = newUrl;
+        }
+    </script>    
 </body>
