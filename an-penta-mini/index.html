@@ -9,7 +9,7 @@
 	<title>Web-Installer for WLED on QuinLED boards</title>
   <script
   type="module"
-  src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"
+  src="https://unpkg.com/esp-web-tools@10.0.1/dist/web/install-button.js?module"
 ></script>
 	<style>
 		body {
@@ -134,15 +134,15 @@
 <img class="logo" alt="" src="../images/logo-QuinLED1.png">
 <div class="main">
 <h2>Welcome to the Web-Installer for WLED on QuinLED boards!</h2>
-<h2>QuinLED Dig2Go</h2>
-<img alt="" src="../images/dig2go_pure.png">
+<h2>QuinLED An-Penta-Mini</h2>
+<img alt="" src="../images/an-penta-mini.jpg">
 
-<h3>To prepare, please plug in the Dig2Go to your computer with an USB-C cable</h3>
+<h3>To prepare, please plug in the An-Penta-Mini to your computer with an USB-C cable</h3>
 
 <div id="flasher">
 
 <ol>
-  <li>Plug in your Dig2Go using a USB-C cable to a USB port on your computer</li>
+  <li>Plug in your An-Penta-Mini using a USB-C cable to a USB port on your computer</li>
   <li>Select board version you want to flash from pull-down menu</li>
   <li id="coms"> Hit "Install" and select the "USB Serial (COMx)". <a onclick="showSerialHelp()">No device found?</a></li>
   <li>Custom QuinLED pre-configured WLED is installed within 3 minutes!</li>
@@ -154,7 +154,7 @@
 <div class="container inst-button">
   <esp-web-install-button
     id="inst"
-    manifest="json/QuinLED-Dig2Go-notemp.json"
+    manifest="json/QuinLED-an-penta-mini-notemp.json"
   >
     <button class="btn" slot="activate">Install</button>
   </esp-web-install-button><br>
@@ -162,9 +162,9 @@
     <!-- add new builds here -->
     <select id="ver" class="btn" onchange="setManifest()">
       <optgroup label="WLED 0.14.2">
-        <option data-manifest="json/QuinLED-Dig2Go-notemp.json"
-          data-temperature="json/QuinLED-Dig2Go-notemp.json"
-          >Dig2Go Default</option> 
+        <option data-manifest="json/QuinLED-an-penta-mini-notemp.json"
+          data-temperature=""
+          >An-Penta-Mini Default</option> 
       </optgroup>
     </select><br><br>
     
@@ -185,7 +185,7 @@
       m = me;
     }
     document.getElementById('inst').setAttribute('manifest',m);
-    document.getElementById('verstr').textContent = opt.text;
+    document.getElementById('ver').textContent = opt.text;
   }
   
   function checkSupported() {
