@@ -1,16 +1,14 @@
 {
   "name": "quinled-web-installer",
   "version": "1.0.0",
-  "description": "```\r docker build -t quinled-install:latest .\r ```",
+  "description": "Web-Installer for WLED on QuinLED boards",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
     "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "express": "^4.21.0",
-    "nodemon": "^3.1.5"
+    "express": "^4.21.0"
   }
 }

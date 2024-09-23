@@ -1,26 +1,15 @@
-# QuinLED Web-Installer for WLED
+# Web-Installer for WLED on QuinLED boards
 
-# Development
+This repository holds the source for the [Web-Installer](https://install.quinled.info/) for [WLED](https://kno.wled.ge/) on [QuinLED boards](https://quinled.info/).
 
-## Install the dependencies
+# Building
 
-* Install Node.JS - https://nodejs.org/en
+The current source does require building. However, node.js can be used to run a local 
+web server hosting the source. The local web server runs at http://localhost:8080/ 
+
+* Install Node.JS - https://nodejs.org/
 * Install development dependencies `npm install`
-* To run the server normally, use `npm start` and browse to http://localhost:8080/
-* To run the server with automatic reloading during development, use `npm run dev` and browse to http://localhost:8080/
 
-# Docker
 
-## Build Docker Image
-
-```
-docker build -t quinled-install:latest .
-```
-
-## Run Docker Image to test
-
-```
-docker run -p 8080:80 quinled-install:latest
-```
-
-Open browser to `http://localhost:8080/`
+# Running
+* To run the server, use `npm start` and browse to http://localhost:8080/
