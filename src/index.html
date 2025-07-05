@@ -141,6 +141,12 @@ button::before {
     background-color: #FFEE2F;
 }
 
+.box-7:hover button::before {
+    width: 120%;
+    opacity: .8;
+    background-color: #FFEE2F;
+}
+
 
 .container {
     display: -webkit-box;
@@ -276,6 +282,22 @@ button::before {
     top: -85px
 }
 
+.box-7 button {
+    border: 1px solid #FFEE2F;
+    color: #fff;
+    width: 320px;
+    font-size: 22px;
+    text-align: right;
+    padding-right: 20px;
+    line-height: 40px;
+}
+
+.box-7 button::after {
+    content: "";
+    background-color: #FFEE2F;
+    top: -85px
+}
+
 .cover {
     -webkit-transition: all 400ms ease-in-out;
     transition: all 400ms ease-in-out;
@@ -338,6 +360,11 @@ button::before {
 .box-6 .cover::after {
     background-image: url('/images/an-penta-plus.png');
 }
+
+.box-6 .cover::after {
+    background-image: url('/images/an-penta-deca.png');
+}
+
 
 .box-1 button div::before {
     content: 'QuinLED-Dig-Uno';
@@ -423,6 +450,20 @@ button::before {
     color: #000;
 }
 
+.box-7 button div::before {
+    content: 'QuinLED-An-Penta-Deca';
+    position: relative;
+    top: -44px;
+    left: -9px;
+    color: #FFEE2F;
+    font-size: 21px;
+    font-weight: 300;
+}
+
+.box-7:hover button div::before {
+    color: #000;
+}
+
 .dr {
 position: absolute;
   bottom: 16px; 
@@ -465,6 +506,10 @@ position: absolute;
 		</div>
 		<div class="box box-6" onclick="navigateTo('/an-penta-plus/index.html')">
 			<div class="cover"><img src="/images/an-penta-plus.png" alt=""></div>
+			<button><div></div></button>
+		</div>
+		<div class="box box-7" onclick="navigateTo('/an-penta-deca/index.html')">
+			<div class="cover"><img src="/images/an-penta-deca.png" alt=""></div>
 			<button><div></div></button>
 		</div>
 	</div>
