@@ -136,7 +136,7 @@ button::before {
 .box-5:hover button::before {
     width: 120%;
     opacity: .8;
-    background-color: #eb9234;
+    background-color: #00BF9C;
 }
 
 .box-6:hover button::before {
@@ -146,6 +146,12 @@ button::before {
 }
 
 .box-7:hover button::before {
+    width: 120%;
+    opacity: .8;
+    background-color: #eb9234;
+}
+
+.box-8:hover button::before {
     width: 120%;
     opacity: .8;
     background-color: #eb9234;
@@ -255,7 +261,7 @@ button::before {
 
 
 .box-5 button {
-    border: 1px solid #eb9234;
+    border: 1px solid #00BF9C;
     color: #fff;
     width: 320px;
     font-size: 22px;
@@ -266,7 +272,7 @@ button::before {
 
 .box-5 button::after {
     content: "";
-    background-color: #eb9234;
+    background-color: #00BF9C;
     top: -85px
 }
 
@@ -297,6 +303,22 @@ button::before {
 }
 
 .box-7 button::after {
+    content: "";
+    background-color: #eb9234;
+    top: -85px
+}
+
+.box-8 button {
+    border: 1px solid #eb9234;
+    color: #fff;
+    width: 320px;
+    font-size: 22px;
+    text-align: right;
+    padding-right: 20px;
+    line-height: 40px;
+}
+
+.box-8 button::after {
     content: "";
     background-color: #eb9234;
     top: -85px
@@ -358,7 +380,7 @@ button::before {
 }
 
 .box-5 .cover::after {
-    background-image: url('/images/an-penta-mini.png');
+    background-image: url('/images/dignext2.png');
 }
 
 .box-6 .cover::after {
@@ -369,6 +391,9 @@ button::before {
     background-image: url('/images/an-penta-deca.png');
 }
 
+.box-8 .cover::after {
+    background-image: url('/images/an-penta-mini.png');
+}
 
 .box-1 button div::before {
     content: 'QuinLED-Dig-Uno';
@@ -427,11 +452,11 @@ button::before {
 }
 
 .box-5 button div::before {
-    content: 'QuinLED-An-Penta-Mini';
+    content: 'QuinLED-Dig-Next-2';
     position: relative;
     top: -44px;
     left: -9px;
-    color: #eb9234;
+    color: #00BF9C;
     font-size: 21px;
     font-weight: 300;
 }
@@ -466,6 +491,20 @@ button::before {
 
 .box-7:hover button div::before {
     color: #000;
+}
+
+.box-8 button div::before {
+    content: 'QuinLED-An-Penta-Mini';
+    position: relative;
+    top: -44px;
+    left: -9px;
+    color: #eb9234;
+    font-size: 21px;
+    font-weight: 300;
+}
+
+.box-8:hover button div::before {
+    color: #fff;
 }
 
 .dr {
@@ -504,8 +543,8 @@ position: absolute;
 			<div class="cover"><img src="/images/dig2go_pure.png" alt=""></div>
 			<button><div></div></button>
 		</div>
-		<div class="box box-5" onclick="navigateTo('/an-penta-mini/index.html')">
-			<div class="cover"><img src="/images/an-penta-mini.png" alt=""></div>
+		<div class="box box-5" onclick="navigateTo('/dig-next-2/index.html')">
+			<div class="cover"><img src="/images/dignext2.png" alt=""></div>
 			<button><div></div></button>
 		</div>
 		<div class="box box-6" onclick="navigateTo('/an-penta-plus/index.html')">
@@ -514,6 +553,10 @@ position: absolute;
 		</div>
 		<div class="box box-7" onclick="navigateTo('/an-penta-deca/index.html')">
 			<div class="cover"><img src="/images/an-penta-deca.png" alt=""></div>
+			<button><div></div></button>
+		</div>
+		<div class="box box-8" onclick="navigateTo('/an-penta-mini/index.html')">
+			<div class="cover"><img src="/images/an-penta-mini.png" alt=""></div>
 			<button><div></div></button>
 		</div>
 	</div>
