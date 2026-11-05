@@ -76,12 +76,17 @@
     var opt = sel.options[sel.selectedIndex];
     var m = opt.dataset.manifest;
     var me = opt.dataset.temperature;
-    document.getElementById('temper').style.display = me ? "block":"none";
-    if (me && document.getElementById('temperature').checked) {
-      m = me;
+	
+	// Check if the element exists before accessing .style
+    var temperEl = document.getElementById('temper');
+    if (temperEl) {
+      temperEl.style.display = me ? "block" : "none";
     }
+   // if (me && document.getElementById('temperature').checked) {
+   //   m = me;
+   // }
     document.getElementById('inst').setAttribute('manifest',m);
-    document.getElementById('verstr').textContent = opt.text;
+    //document.getElementById('ver').textContent = opt.text;
   }
   
   function checkSupported() {

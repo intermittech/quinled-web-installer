@@ -202,12 +202,12 @@ If you use ethernet, when the flashing is complete, ethernet will become active 
     var opt = sel.options[sel.selectedIndex];
     var m = opt.dataset.manifest;
     var me = opt.dataset.temperature;
-    document.getElementById('temper').style.display = me ? "block":"none";
+    //document.getElementById('temper').style.display = me ? "block":"none";
     if (me && document.getElementById('temperature').checked) {
       m = me;
     }
     document.getElementById('inst').setAttribute('manifest',m);
-    document.getElementById('verstr').textContent = opt.text;
+    //document.getElementById('verstr').textContent = opt.text;
   }
   
   function checkSupported() {
